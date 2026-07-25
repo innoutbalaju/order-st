@@ -1,0 +1,35 @@
+Help me connect this Vite + React app to my Supabase project.
+
+1. Please create a `.env` file in the root directory (if it doesn't already exist) with the following environment variables:
+
+VITE_SUPABASE_URL=https://joohcptsocwbwjaxqsph.supabase.co
+VITE_SUPABASE_ANON_KEY=sb_publishable_pbTiIlCcWk9jURPAf5BGog_UhjX0pZL
+
+2. Check if `@supabase/supabase-js` is installed in package.json. If not, tell me to install it or set up the client file.
+
+3. Inspect my Supabase client setup (e.g. in `src/lib/supabase.ts` or `src/supabaseClient.ts`) to make sure it properly reads `import.meta.env.VITE_SUPABASE_URL` and `import.meta.env.VITE_SUPABASE_ANON_KEY`.
+
+4. Test or verify that the app can interact with the `rooms`, `menu_items`, and `orders` tables based on the schema in `migrations/01_initial_schema.sql`.<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Trae Project</title>
+    <script type="module">
+      if (import.meta.hot?.on) {
+        import.meta.hot.on('vite:error', (error) => {
+          if (error.err) {
+            console.error(
+              [error.err.message, error.err.frame].filter(Boolean).join('\n'),
+            )
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
